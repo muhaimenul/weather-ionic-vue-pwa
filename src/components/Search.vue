@@ -28,22 +28,25 @@ export default {
     methods: {
         onSubmit(e) {
             e.preventDefault();
-            console.log(this.zip);
+            // console.log(this.zip);
              // Zip Regex
             const isValidZip = /(^\d{5}$)|(^\d{5}-\d{4}$)/.test(this.zip);
             // checking valid zip
-            // if(!isValidZip) {
-            //     this.
-            // }
+            if(!isValidZip) {
+                this.showAlert()
+            } else {
+                this.$emit("get-zip", this.zip)
+            }
+            this.zip = ""
       
         },
         showAlert () {
-            return this.$ionic.alerController
-            .create({
-                header: "Enter ZipCode",
-                message: "please enter a valid ZipCode",
-                button: ["OK"]
-            }).then(a => a.present())
+            return this.$ionic.alertController
+                .create({
+                    header: "Enter Zipcode",
+                    message: "Please enter a valid US zipcode",
+                    buttons: ["OK"]
+                }).then(a => a.present());
         }
     }
 }

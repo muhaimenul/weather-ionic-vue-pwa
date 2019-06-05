@@ -11,7 +11,7 @@
     </ion-header>
 
     <ion-content class="ion-padding">
-      <Search />
+      <Search v-on:get-zip="getZipInfo"/>
     </ion-content>
   </div>
 </template>
@@ -25,6 +25,11 @@ export default {
   name: 'home',
   components: {
     Search
+  },
+  methods: {
+    getZipInfo(zip) {
+      console.log(zip)
+    }
   }
 }
 </script>
