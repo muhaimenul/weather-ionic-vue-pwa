@@ -20,15 +20,26 @@
 // @ is an alias to /src
 // import HelloWorld from '@/components/HelloWorld.vue'
 import Search from '@/components/Search.vue'
+import Info from '@/components/Info.vue'
 
 export default {
   name: 'home',
   components: {
     Search
   },
+  data () {
+    return {
+      info: null
+    }
+  },
   methods: {
-    getZipInfo(zip) {
-      console.log(zip)
+    async getZipInfo(zip) {
+      const res = await fetch(`https://api.zippopotam.us/us/${zip}`)
+      if(res.status == 404) {
+        console.log(res)
+      }
+      this.info = await res.json()
+      console.log(this.info)
     }
   }
 }
