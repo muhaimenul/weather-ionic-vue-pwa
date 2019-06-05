@@ -12,6 +12,7 @@
 
     <ion-content class="ion-padding">
       <Search v-on:get-zip="getZipInfo"/>
+      <Info v-bind:info="info" />
     </ion-content>
   </div>
 </template>
@@ -25,7 +26,7 @@ import Info from '@/components/Info.vue'
 export default {
   name: 'home',
   components: {
-    Search
+    Search, Info
   },
   data () {
     return {
