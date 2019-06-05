@@ -56,3 +56,8 @@ firebase deploy
 
 Project Console: https://console.firebase.google.com/project/learing-db/overview
 Hosting URL: https://learing-db.firebaseapp.com
+
+## For PWA
+```
+vue add @vue/pwa
+```
