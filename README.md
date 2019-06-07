@@ -47,7 +47,10 @@ firebase list
 ```
 firebase init
 ```
-Select Hosting and DB (Created)
+- Select Hosting
+- Select a default Firebase project for this directory
+- Add directory to be hosted (dist for vue)
+- Select SPA
 
 ### Depoloy to Firebase
 ```
